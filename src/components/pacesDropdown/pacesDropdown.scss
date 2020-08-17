@@ -1,0 +1,105 @@
+.Select-dropdown {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  .Dropdown {
+    &-control {
+      align-items: center;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      background-color: #fff;
+      position: relative;
+      box-sizing: border-box;
+      border-bottom: 1px solid #999999;
+      transition: all 100ms ease 0s;
+      outline: 0px !important;
+      position: relative;
+      z-index: 1;
+      height: 60px;
+      color: #222222;
+      @media only screen and (max-width: 685px) {
+        height: 50px;
+      }
+    }
+    &-menu {
+      background-color: #fff;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      z-index: 10;
+    }
+    &-arrow-wrapper {
+      padding-right: 14px;
+      user-select: none;
+      svg {
+        transform: rotateZ(0);
+        transition: all 0.4s ease;
+        user-select: none;
+        fill: #444444;
+      }
+    }
+    &-option {
+      color: #222222;
+      font-size: 18px;
+      padding: 17.5px 14px;
+      display: flex;
+      justify-content: space-between;
+      transition: 0.03s ease-out background;
+      @media only screen and (max-width: 685px) {
+        padding: 13.2px 14px;
+      }
+      &:hover {
+        background: #f6f6f6;
+      }
+      &.is-selected {
+        color: #E50847;
+      }
+      .size-measure {
+        flex: 1;
+        margin-left: 3px;
+      }
+    }
+    &-placeholder {
+      font-size: 18px;
+      user-select: none;
+      line-height: 1;
+      padding: 19px 10px 19px 14px;
+      display: flex;
+      flex: 1;
+    }
+  }
+
+  &.is-open {
+    .Dropdown {
+      &-arrow-wrapper {
+        svg {
+          transition: all 0.4s ease;
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+  }
+}
+
+.model-dropdown {
+  width: 100%;
+  padding: 0 20px;
+  .Dropdown {
+    &-control {
+      .is-selected {
+
+      }
+    }
+    &-option {
+      justify-content: flex-start;
+    }
+    &-menu {
+      .Dropdown-option {
+        // padding: 19px 15px;
+      }
+    }
+  }
+}

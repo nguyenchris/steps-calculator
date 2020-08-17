@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -166,7 +166,7 @@ module.exports = function(webpackEnv) {
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
       filename: isEnvProduction
-        ? 'static/js/[name].[contenthash:8].js'
+        ? 'static/js/[name].js'
         : isEnvDevelopment && 'static/js/bundle.js',
       // TODO: remove this when upgrading to webpack 5
       futureEmitAssets: true,
@@ -261,15 +261,19 @@ module.exports = function(webpackEnv) {
       // https://twitter.com/wSokra/status/969633336732905474
       // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
       splitChunks: {
-        chunks: 'all',
-        name: false,
+        // chunks: 'all',
+        // name: false,
+        cacheGroups: {
+          default: false
+       }
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
       // https://github.com/facebook/create-react-app/issues/5358
-      runtimeChunk: {
-        name: entrypoint => `runtime-${entrypoint.name}`,
-      },
+      // runtimeChunk: {
+      //   name: entrypoint => `runtime-${entrypoint.name}`,
+      // },
+      runtimeChunk: false,
     },
     resolve: {
       // This allows you to set a fallback for where webpack should look for modules.
@@ -356,7 +360,7 @@ module.exports = function(webpackEnv) {
               loader: require.resolve('url-loader'),
               options: {
                 limit: imageInlineSizeLimit,
-                name: 'static/media/[name].[hash:8].[ext]',
+                name: 'static/media/[name].[ext]',
               },
             },
             // Process application JS with Babel.
@@ -498,7 +502,7 @@ module.exports = function(webpackEnv) {
               // by webpacks internal loaders.
               exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
               options: {
-                name: 'static/media/[name].[hash:8].[ext]',
+                name: 'static/media/[name].[ext]',
               },
             },
             // ** STOP ** Are you adding a new loader?
@@ -571,7 +575,7 @@ module.exports = function(webpackEnv) {
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           // both options are optional
-          filename: 'static/css/[name].[contenthash:8].css',
+          filename: 'static/css/[name].css',
           chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
         }),
       // Generate an asset manifest file with the following content:
