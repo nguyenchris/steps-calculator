@@ -1,7 +1,7 @@
 {
   "name": "zoma-steps-calculator",
   "version": "0.1.0",
-  "homepage": "https://zomasleep.com/blog/wp-content/js/steps-calculator/",
+  "homepage": "https://zomasleep.com/blog/wp-content/themes/zoma/js/steps-calculator/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
