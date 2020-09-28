@@ -23,7 +23,7 @@ const errors = [
 ]
 
 function Calculator() {
-  const [gender, setGender] = useState('Female');
+  const [gender, setGender] = useState('Male');
   const [feet, setFootTotal] = useState('');
   const [inches, setInchTotal] = useState('');
   const [isImperial, setMetric] = useState(true);
@@ -174,9 +174,9 @@ function Calculator() {
           </div>
           <div className="select-options-pill">
             <ul onClick={updateGender}>
+            <li className={`${gender === 'Male' ? 'active' : ''}`}><label htmlFor="male">Male</label></li>
               <li className={`${gender === 'Female' ? 'active' : ''}`}><label htmlFor="female">Female</label></li>
-              <li className={`${gender === 'Male' ? 'active' : ''}`}><label htmlFor="male">Male</label></li>
-              <div className={`toggle-slide ${gender === 'Female' ? 'left' : 'right'}`}></div>
+              <div className={`toggle-slide ${gender === 'Female' ? 'right' : 'left'}`}></div>
             </ul>
           </div>
         </div>
