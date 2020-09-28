@@ -234,7 +234,7 @@ class ReactDropdown extends Component {
           {value}
           <div className={`${baseClassName}-arrow-wrapper`}>
             {/* {arrowOpen && arrowClosed ? this.state.isOpen ? arrowOpen : arrowClosed : <span className={arrowClass} />} */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="9.4" height="8"><path d="M4.2 1.944L1.766 6h4.868L4.2 1.944M4.2 0l4.2 7H0l4.2-7z" fill="#E50847" transform="matrix(-1 0 0 -1 8.4 7)"/></svg>
+            <i class="arrow"></i>
           </div>
         </div>
         {menu}

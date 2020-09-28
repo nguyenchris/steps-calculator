@@ -6,6 +6,7 @@
       font-weight: 700;
       font-size: 30px;
       line-height: 42px;
+      margin: 0;
     }
   }
   // Form
@@ -18,22 +19,31 @@
 // Input group
 .input-group {
   margin-bottom: 35px;
+  flex-direction: column;
   @media only screen and (max-width: 685px) {
     margin-bottom: 25px;
   }
   &-inline {
     display: flex;
     justify-content: space-between;
+    margin: 0 !important;
+    max-width: unset !important;
     @media only screen and (max-width: 685px) {
       flex-direction: column;
     }
   }
   &__label {
-    margin-bottom: 8px;
+    margin: 0 0 8px 0 !important;
+    max-width: unset !important;
     color:#000000;
     font-size: 18px;
     line-height: 30px;
     letter-spacing: 0;
+    font-weight: 700;
+    label {
+      display: block;
+      margin: 0;
+    }
   }
   input {
     outline: 0;
@@ -53,13 +63,14 @@
 .input-text-field {
   width: 100%;
   position: relative;
+  margin: initial;
   &__container {
     background: #fff;
     position: relative;
     border-bottom: 1px solid #999;
   }
   &__label {
-    color: #2D1C45;
+    color: #3333CC;
     font-size: 16px;
     font-weight: 500;
     justify-self: flex-end;
@@ -72,8 +83,9 @@
     align-items: center;
     pointer-events: none;
     user-select:none;
+    margin: 0;
     @media only screen and (max-width: 685px) {
-      top: 5px;
+      top: 2px;
     }
   }
   input {
@@ -92,14 +104,15 @@
 }
 
 .err-msg {
-  color: #E50847;
+  color: #dc3545;
   font-size: 14px;
+  display: inline-block;
 }
 
 .submit-button {
   height: 70px;
   width: 100%;
-  background: #E50847;
+  background: #3333CC;
   color: #fff;
   font-weight: 700;
   font-size: 16px;
@@ -113,7 +126,7 @@
     height: 60px;
   }
   &:hover {
-    background: #ef0848;
+    background-color: lighten(#3333CC, 5);
   }
 }
 // Select Pill
@@ -126,7 +139,7 @@
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
-    border-radius: 50px;
+    border-radius: 7px;
     background: #fff;
     position: relative;
     margin: 0;
@@ -134,10 +147,10 @@
     &:hover {
       .toggle-slide {
         &.left {
-          background-color: lighten(#2d1c45, 5);
+          background-color: lighten(#3333CC, 5);
         }
         &.right {
-          background-color: lighten(#2d1c45, 5);
+          background-color: lighten(#3333CC, 5);
         }
       }
     }
@@ -145,14 +158,14 @@
       position: absolute;
       height: 100%;
       width: 50%;
-      border-radius: 50px;
+      border-radius: 7px;
       transition: left 400ms ease-in-out 0s, background-color 150ms ease-in-out 0s;
       &.left {
-        background-color: #2d1c45;
+        background-color: #3333CC;
         left: 0;
       }
       &.right {
-        background-color: #2d1c45;
+        background-color: #3333CC;
         left: 50%;
       }
     }
@@ -166,19 +179,19 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      border-radius: 50px;
+      // border-radius: 7px;
       touch-action: manipulation;
       z-index: 5;
       @media only screen and (max-width: 685px) {
         height: 55px;
       }
       &:nth-child(1) {
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
       }
       &:nth-child(2) {
-        border-top-right-radius: 50px;
-        border-bottom-right-radius: 50px;
+        border-top-right-radius:7px;
+        border-bottom-right-radius: 7px;
         position: relative;
       }
       * {
@@ -191,7 +204,7 @@
         font-size: 16px;
         line-height: 16px;
         letter-spacing: 0.16px;
-        color: #2d1c45;
+        color: #3333CC;
         transition: color 400ms ease-in-out;
         cursor: pointer;
       }
@@ -233,6 +246,7 @@
     background-color: #FFFFFF;
     text-align: center;
     padding: 0 10px;
+    margin: 0 !important;
     &:nth-of-type(3) {
       @media only screen and (min-width: 676px) {
         grid-column-start: 1;

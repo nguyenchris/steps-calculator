@@ -34,11 +34,17 @@
     &-arrow-wrapper {
       padding-right: 14px;
       user-select: none;
-      svg {
-        transform: rotateZ(0);
+      @media only screen and (max-width: 685px) {
+        margin-bottom: 5px;
+      }
+      .arrow {
+        border: solid #3333cc;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
         transition: all 0.4s ease;
-        user-select: none;
-        fill: #444444;
       }
     }
     &-option {
@@ -55,7 +61,7 @@
         background: #f6f6f6;
       }
       &.is-selected {
-        color: #E50847;
+        color: #3333cc;
       }
       .size-measure {
         flex: 1;
@@ -69,16 +75,21 @@
       padding: 19px 10px 19px 14px;
       display: flex;
       flex: 1;
+      @media only screen and (max-width: 685px) {
+        padding: 16px 10px 19px 14px;
+      }
     }
   }
 
   &.is-open {
     .Dropdown {
       &-arrow-wrapper {
-        svg {
-          transition: all 0.4s ease;
-          transform: rotateZ(180deg);
-        }
+        // svg {
+          .arrow {
+            transition: all 0.4s ease;
+            transform: rotateZ(225deg);
+          }
+        // }
       }
     }
   }
@@ -90,7 +101,6 @@
   .Dropdown {
     &-control {
       .is-selected {
-
       }
     }
     &-option {
